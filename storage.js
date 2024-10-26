@@ -17,7 +17,11 @@ getStates().then(data => {
         const stateName = state.name;
         console.log(stateName)
         delete state.name;
-        localStorage.setItem(stateName, JSON.stringify(state))
+        const uppercaseStateName = stateName.toUpperCase();
+        console.log(uppercaseStateName)
+        const upperCaseValues = JSON.stringify(state).toUpperCase();
+        console.log(upperCaseValues)
+        localStorage.setItem(uppercaseStateName, upperCaseValues)
     }
     for (let i=0; i < secondHalf.length; i++) {
         const state = secondHalf[i]
